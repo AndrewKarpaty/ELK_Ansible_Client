@@ -1,0 +1,13 @@
+---
+
+- name: Install unzip
+  yum: name=unzip state=installed
+
+- name: Download and unzip dashboard
+  unarchive:
+        src: http://download.elastic.co/beats/dashboards/beats-dashboards-1.3.1.zip
+        dest: /opt
+        remote_src: yes
+
+- name: Execute load script
+  script: /opt/beats-dashboards-1.3.1/load.sh

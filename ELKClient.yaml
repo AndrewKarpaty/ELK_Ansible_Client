@@ -1,0 +1,9 @@
+---
+- name: Setting up ELK Client components
+  hosts: 10.0.0.28
+  become: true
+  become_user: root
+  gather_facts: yes
+  roles:
+    - elk-client
+ 

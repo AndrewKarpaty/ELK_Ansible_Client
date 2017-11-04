@@ -1,7 +1,7 @@
 Ansible-ELK
 =========
 
-Ansible playbook to install ELK stack
+Ansible playbook for ELK clients
 
 Requirements
 ------------

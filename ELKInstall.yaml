@@ -1,7 +1,0 @@
----
-- name: Setting up ELK Components
-  hosts: localhost
-  connection: local
-  gather_facts: no
-  roles:
-    - elk-setup

@@ -1,0 +1,12 @@
+---
+# tasks file for elk-setup
+
+- name: Install Java 8
+  include: java.yml
+
+
+- name: Load Client components
+  include: filebeat.yml 
+
+#- name: Install Beats dashboards
+#  include: dashboard.yml
