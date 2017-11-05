@@ -6,7 +6,5 @@
 
 
 - name: Load Client components
-  include: filebeat.yml 
+  include: beats.yml 
 
-#- name: Install Beats dashboards
-#  include: dashboard.yml

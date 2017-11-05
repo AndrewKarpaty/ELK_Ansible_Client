@@ -1,0 +1,29 @@
+---
+
+- name: Copy Filebeat Repository
+  template: src=elastic.repo.j2 dest=/etc/yum.repos.d/elastic.repo
+
+- name: Install Filebeat
+  yum: name=filebeat state=installed
+ 
+- name: Configurate Filebeat
+  template: src=filebeat.yml.j2 dest=/etc/filebeat/
+  notify: Restart filebeat
+
+- name: Install Packetbeat
+  yum: name=packetbeat state=installed
+  
+- name: Configurate Packetbeat
+  template: src=packetbeat.yml.j2 dest=/etc/packetbeat/
+  notify: Restart packetbeat
+
+- name: Copy Topbeat Repository
+  template: src=elastic-beats.repo.j2 dest=/etc/yum.repos.d/elastic-beat.repo
+
+- name: Install Topbeat
+  yum: name=topbeat state=installed
+
+- name: Configurate Topbeat
+  template: src=topbeat.yml.j2 dest=/etc/topbeat/
+  notify: Restart topbeat
+
